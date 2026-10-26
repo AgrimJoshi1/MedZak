@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-26T00:00:00Z",
+  "title": "Design System: Medzak Healthcare",
+  "extensions": {
+    "colorMeta": {
+      "navy-ink": { "role": "primary", "displayName": "Navy Ink", "canonical": "#0B1F3A", "tonalRamp": ["#030A14", "#071528", "#0B1F3A", "#11294B", "#2E405A", "#55667D", "#9FB3CC", "#D6E2F1"] },
+      "clinical-blue": { "role": "primary", "displayName": "Clinical Blue", "canonical": "#2F6DB5", "tonalRamp": ["#0F2742", "#1B467A", "#245A9A", "#2F6DB5", "#6EA8F0", "#8DBBF5", "#B9D5FA", "#E8F3FB"] },
+      "demo-orange": { "role": "primary", "displayName": "Demo Orange", "canonical": "#F47B30", "tonalRamp": ["#5A2108", "#8F3510", "#C2410C", "#EC6A1E", "#F47B30", "#F7924F", "#FFA468", "#FFF1E8"] },
+      "health-teal": { "role": "secondary", "displayName": "Health Teal", "canonical": "#14B8A6", "tonalRamp": ["#093B37", "#0F766E", "#14B8A6", "#2DD4BF", "#5EEAD4", "#7FE7D9", "#B5F3EA", "#E6FAF6"] },
+      "sky-canvas": { "role": "neutral", "displayName": "Sky Canvas", "canonical": "#F4F9FD", "tonalRamp": ["#55667D", "#8896A9", "#B7C3D2", "#D6E2F1", "#E8F3FB", "#EEF4FA", "#F4F9FD", "#FFFFFF"] },
+      "night-canvas": { "role": "neutral", "displayName": "Night Canvas", "canonical": "#07121F", "tonalRamp": ["#07121F", "#0A1726", "#0C1A2B", "#10233A", "#1C3354", "#95A6BB", "#C4D1E0", "#EAF2FB"] },
+      "danger": { "role": "tertiary", "displayName": "Error Red", "canonical": "#D93025", "tonalRamp": ["#4A0F0B", "#8A1D16", "#C5221F", "#D93025", "#FF6B6B", "#FF8A80", "#FFC2BD", "#FDECEA"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Home H1 only; tight, heavy Red Hat Display." },
+      "headline": { "displayName": "Headline", "purpose": "Page titles and H2 section titles." },
+      "title": { "displayName": "Title", "purpose": "Card, step and row headings." },
+      "lead": { "displayName": "Lead", "purpose": "Section and hero intros, 60ch measure." },
+      "body": { "displayName": "Body", "purpose": "Paragraph copy in Inter." },
+      "label": { "displayName": "Label", "purpose": "Buttons, nav, chips." }
+    },
+    "shadows": [
+      { "name": "rest", "value": "0 1px 2px rgba(11,31,58,.05), 0 2px 8px rgba(11,31,58,.04)", "purpose": "Cards and secondary buttons at rest." },
+      { "name": "raised", "value": "0 2px 4px rgba(11,31,58,.04), 0 12px 32px rgba(11,31,58,.08)", "purpose": "Glass cards, product feature, stat chips." },
+      { "name": "lifted", "value": "0 6px 12px rgba(11,31,58,.06), 0 28px 64px rgba(11,31,58,.14)", "purpose": "Interactive card hover, hero photos." },
+      { "name": "cta", "value": "0 8px 22px rgba(0,0,0,.14)", "purpose": "The orange primary button (hover: 0 12px 28px rgba(0,0,0,.20))." },
+      { "name": "overlay", "value": "0 6px 12px rgba(0,0,0,.10), 0 28px 64px rgba(0,0,0,.28)", "purpose": "Modals and palette over the scrim." },
+      { "name": "header", "value": "0 8px 28px rgba(11,31,58,.07)", "purpose": "Scrolled header." }
+    ],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(.22,1,.36,1)", "purpose": "Single easing for all state, reveal and indicator motion." },
+      { "name": "dur-1", "value": "200ms", "purpose": "Color and border response." },
+      { "name": "dur-2", "value": "360ms", "purpose": "Lift, slide, drawer and indicator." },
+      { "name": "dur-3", "value": "600ms", "purpose": "Scroll reveal and image scale." },
+      { "name": "scan-ring", "value": "spin 3.6s linear infinite (arc), 28s (dashes), pulse 3.4s", "purpose": "The only continuous hero motion." },
+      { "name": "timeline-draw", "value": "1.5s var(--ease) .25s", "purpose": "Timeline line draws on scroll." },
+      { "name": "ticker", "value": "70s linear infinite, pauses on hover/focus", "purpose": "Two-row news ticker." }
+    ],
+    "breakpoints": [
+      { "name": "quick-bar", "value": "767px" },
+      { "name": "split-stack", "value": "991px" },
+      { "name": "drawer-nav", "value": "1199px" },
+      { "name": "full-nav-wide", "value": "1360px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one orange pill: BOOK A DEMO and primary actions, navy text.",
+      "html": "<button class=\"ds-btn-primary\">BOOK A DEMO</button>",
+      "css": ".ds-btn-primary{min-height:48px;padding:0 22px;border:1px solid transparent;border-radius:999px;background:#F47B30;color:#0B1F3A;font:650 15px/1.1 Inter,system-ui,sans-serif;letter-spacing:.005em;box-shadow:0 8px 22px rgba(0,0,0,.14);cursor:pointer;transition:background-color .2s,transform .36s,box-shadow .36s}.ds-btn-primary:hover{background:#EC6A1E;transform:translateY(-1px);box-shadow:0 12px 28px rgba(0,0,0,.20)}.ds-btn-primary:focus-visible{outline:2px solid #F47B30;outline-offset:3px}.ds-btn-primary:active{transform:none}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "White outlined pill beside the primary (Watch More, Contact).",
+      "html": "<button class=\"ds-btn-secondary\">Watch More</button>",
+      "css": ".ds-btn-secondary{min-height:48px;padding:0 22px;border:1px solid rgba(11,31,58,.17);border-radius:999px;background:#fff;color:#0B1F3A;font:650 15px/1.1 Inter,system-ui,sans-serif;box-shadow:0 1px 2px rgba(11,31,58,.05),0 2px 8px rgba(11,31,58,.04);cursor:pointer;transition:color .2s,border-color .2s,transform .36s}.ds-btn-secondary:hover{color:#1B467A;border-color:#2F6DB5;transform:translateY(-1px)}.ds-btn-secondary:focus-visible{outline:2px solid #F47B30;outline-offset:3px}"
+    },
+    {
+      "name": "Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Trust and status pill; teal variant marks measured facts.",
+      "html": "<span class=\"ds-chip\">Patented optical technology</span> <span class=\"ds-chip ds-chip-teal\">Estd. 2018</span>",
+      "css": ".ds-chip{display:inline-flex;align-items:center;gap:6px;min-height:30px;padding:4px 12px;border-radius:999px;border:1px solid rgba(11,31,58,.09);background:#fff;font:550 13px/1.2 Inter,system-ui,sans-serif;color:#2E405A}.ds-chip-teal{background:#E6FAF6;border-color:transparent;color:#0F766E}"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "24px hairline card that lifts on hover.",
+      "html": "<article class=\"ds-card\"><h3>Meibo-X</h3><p>Handheld 4-in-1 imaging with AI screening.</p></article>",
+      "css": ".ds-card{padding:32px;border:1px solid rgba(11,31,58,.09);border-radius:24px;background:#fff;box-shadow:0 1px 2px rgba(11,31,58,.05),0 2px 8px rgba(11,31,58,.04);transition:transform .36s cubic-bezier(.22,1,.36,1),box-shadow .36s cubic-bezier(.22,1,.36,1)}.ds-card:hover,.ds-card:focus-within{transform:translateY(-4px);box-shadow:0 6px 12px rgba(11,31,58,.06),0 28px 64px rgba(11,31,58,.14)}.ds-card h3{margin:0;font:700 1.5rem/1.12 'Red Hat Display',system-ui,sans-serif;letter-spacing:-.02em;color:#0B1F3A}.ds-card p{margin:10px 0 0;font:400 1rem/1.6 Inter,system-ui,sans-serif;color:#2E405A}"
+    },
+    {
+      "name": "Stat Chip (glass)",
+      "kind": "custom",
+      "refersTo": "card-glass",
+      "description": "Floating glass reading pinned to the hero scan ring.",
+      "html": "<div class=\"ds-stat-chip\"><span class=\"ds-stat-icon\"></span><div><strong>&gt;92%</strong><span>imaging accuracy</span></div></div>",
+      "css": ".ds-stat-chip{display:inline-flex;align-items:center;gap:12px;padding:10px 16px 10px 10px;border-radius:18px;background:rgba(255,255,255,.72);-webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);border:1px solid rgba(255,255,255,.7);box-shadow:0 2px 4px rgba(11,31,58,.04),0 12px 32px rgba(11,31,58,.08)}.ds-stat-icon{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#E8F3FB,#E6FAF6);border:1px solid rgba(11,31,58,.09)}.ds-stat-chip strong{display:block;font:800 18px/1.1 'Red Hat Display',system-ui,sans-serif;letter-spacing:-.02em;color:#0B1F3A}.ds-stat-chip span:last-child{display:block;font:400 12px/1.3 Inter,system-ui,sans-serif;color:#55667D}"
+    },
+    {
+      "name": "Tabs with sliding indicator",
+      "kind": "nav",
+      "refersTo": "tablist",
+      "description": "Pill tab rail; the white indicator slides under the selected tab.",
+      "html": "<div class=\"ds-tablist\" role=\"tablist\"><span class=\"ds-ind\"></span><button class=\"ds-tab is-sel\" role=\"tab\" aria-selected=\"true\">Meibo-X</button><button class=\"ds-tab\" role=\"tab\">Metabo-X</button><button class=\"ds-tab\" role=\"tab\">VuOpt</button></div>",
+      "css": ".ds-tablist{position:relative;display:inline-flex;gap:4px;padding:6px;border-radius:999px;border:1px solid rgba(11,31,58,.09);background:#E8F3FB}.ds-ind{position:absolute;left:6px;top:6px;width:104px;height:44px;border-radius:999px;background:#fff;box-shadow:0 1px 2px rgba(11,31,58,.05),0 0 0 1px rgba(11,31,58,.09)}.ds-tab{position:relative;z-index:1;min-height:44px;width:104px;padding:10px 22px;border:0;border-radius:999px;background:none;font:700 16px/1.2 'Red Hat Display',system-ui,sans-serif;color:#55667D;cursor:pointer;transition:color .36s}.ds-tab:hover,.ds-tab.is-sel{color:#0B1F3A}.ds-tab:focus-visible{outline:2px solid #F47B30;outline-offset:-2px}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Visible label, 48px field, blue focus ring.",
+      "html": "<div class=\"ds-field\"><label for=\"ds-n\">Full name</label><input id=\"ds-n\" class=\"ds-input\" placeholder=\"Your name\"></div>",
+      "css": ".ds-field{display:flex;flex-direction:column;gap:6px}.ds-field label{font:600 .875rem Inter,system-ui,sans-serif;color:#0B1F3A}.ds-input{min-height:48px;padding:12px 14px;border:1px solid rgba(11,31,58,.17);border-radius:12px;background:#fff;color:#0B1F3A;font:400 15px/1.4 Inter,system-ui,sans-serif;transition:border-color .2s,box-shadow .2s}.ds-input::placeholder{color:#55667D;opacity:.8}.ds-input:hover{border-color:#2F6DB5}.ds-input:focus{outline:none;border-color:#2F6DB5;box-shadow:0 0 0 4px #E8F3FB}"
+    },
+    {
+      "name": "Dropdown Item",
+      "kind": "nav",
+      "refersTo": "icon-chip",
+      "description": "Compact nav panel row: icon chip, name, descriptor, arrow.",
+      "html": "<a class=\"ds-dd\" href=\"#\"><span class=\"ds-dd-icon\"></span><span class=\"ds-dd-text\"><b>Meibo-X</b><small>AI ocular screening</small></span><span class=\"ds-dd-arrow\">&rarr;</span></a>",
+      "css": ".ds-dd{display:flex;align-items:flex-start;gap:12px;width:316px;padding:10px 12px;border-radius:12px;color:#2E405A;text-decoration:none;transition:background-color .2s}.ds-dd:hover,.ds-dd:focus-visible{background:rgba(244,123,48,.09)}.ds-dd:focus-visible{outline:2px solid #F47B30;outline-offset:-2px}.ds-dd-icon{flex:none;width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#E8F3FB,#E6FAF6);border:1px solid rgba(11,31,58,.09)}.ds-dd-text{display:flex;flex-direction:column;gap:2px;flex:1}.ds-dd-text b{font:650 15px/1.25 'Red Hat Display',system-ui,sans-serif;color:#0B1F3A}.ds-dd-text small{font:500 12.5px/1.35 Inter,system-ui,sans-serif;color:#55667D}.ds-dd-arrow{color:#55667D;opacity:.45;transition:transform .2s,opacity .2s}.ds-dd:hover .ds-dd-arrow{opacity:1;transform:translateX(4px)}.ds-dd:hover .ds-dd-text b{color:#C2410C}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Calm Clinical Intelligence",
+    "overview": "A medtech site that proves the device before it sells it. The page is a pale-sky field with deep-navy ink, hairline-bordered 24px cards and generous section spacing. The one thing that moves continuously is the scan ring sweeping the iris in the hero; everything else holds still until it is scrolled to or touched. Clinical trust comes from clarity, whitespace and restraint, not stock imagery or hype.\n\nThe audience is a hospital, lab or outreach-programme buyer weighing evidence, so the system leads with measured facts and keeps decoration to faint ECG and molecule line motifs at 4-6% opacity. Teal marks measured things; blue carries structure and links; a single orange pill carries the one action, BOOK A DEMO. Dark mode is a deep-navy night, never black.",
+    "keyCharacteristics": [
+      "Pale-sky canvas, navy ink, clinical blue structure, teal for measured marks, one orange for action.",
+      "Pill buttons and chips; 24px cards with a hairline border and a soft navy-tinted shadow.",
+      "Glass (translucent + blur) only on the scrolled header, hero stat chips and floating UI.",
+      "One continuous motion (the scan ring); all else is reveal-on-scroll and state response, off under reduced motion.",
+      "Every text/background pair is AA in both themes; 44px touch targets on touch screens."
+    ],
+    "rules": [
+      { "name": "The One Orange Rule", "body": "Orange fills belong to BOOK A DEMO and the primary action of a surface. Orange as text or hover accent uses the darker Orange Ink, never the fill color, and never competes with a primary button in the same viewport.", "section": "colors" },
+      { "name": "The Teal Means Measured Rule", "body": "Teal marks only things the product measures or confirms. It is not a second decorative accent.", "section": "colors" },
+      { "name": "The Navy-On-Orange Rule", "body": "Anything sitting on the orange fill uses navy text. White text on orange is not allowed.", "section": "colors" },
+      { "name": "The Not-Black Rule", "body": "Dark mode is #07121F-based. Pure black is never a surface or text color.", "section": "colors" },
+      { "name": "The Tight Display Rule", "body": "Red Hat Display headings always carry negative letter-spacing (-0.02em to -0.04em); Inter text never does.", "section": "typography" },
+      { "name": "The Gradient Once Rule", "body": "Gradient text (blue to teal) appears once: \"Early Detection\" in the Home H1.", "section": "typography" },
+      { "name": "The Soft Lift Rule", "body": "Shadows are diffuse and blurred (two layers, large radius). Hard offset or zero-blur shadows are not used.", "section": "elevation" },
+      { "name": "The Glass Is Rare Rule", "body": "Backdrop blur is reserved for the scrolled header and floating UI; content cards sit on solid surfaces.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep BOOK A DEMO as the single orange fill in a viewport, with navy text (#0B1F3A on #F47B30).",
+      "Do use teal only for measured or positive marks, and Orange Ink / Teal Ink (never the fills) when the color is text.",
+      "Do use Red Hat Display with negative tracking for headings and Inter for everything else.",
+      "Do build cards at 24px radius with a 1px hairline and the Rest shadow; lift on hover with the Lifted shadow.",
+      "Do let the scan ring be the only continuous motion in the first viewport; add other motion as reveal or state response only.",
+      "Do honor prefers-reduced-motion (animations and transitions collapse, reveals show immediately) and keep focus visible (2px orange, 3px offset).",
+      "Do keep dark mode on #07121F-based surfaces with neutral black shadows, and verify AA in both themes.",
+      "Do use hairline-separated rows or lists instead of a grid of identical cards when content is a list."
+    ],
+    "donts": [
+      "Don't put white text on the orange fill, or use orange fills for anything but primary actions.",
+      "Don't use gradient text anywhere except the Home H1 \"Early Detection\".",
+      "Don't apply backdrop blur to content cards; glass is for the scrolled header and floating UI.",
+      "Don't use pure black for dark-mode surfaces or text.",
+      "Don't use hard offset shadows or tinted navy shadows on dark surfaces.",
+      "Don't reintroduce a stock-doctor hero, an identical icon-card grid, or a testimonial carousel; none exists in the evidence.",
+      "Don't add more than faint (4-6%) ECG or molecule line motifs as ornament."
+    ]
+  }
+}

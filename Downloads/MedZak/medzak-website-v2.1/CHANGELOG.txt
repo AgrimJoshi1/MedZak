@@ -1,3 +1,45 @@
+"Calm Clinical Intelligence" redesign, phases 0-6 (2026-10-26)
+---------------------------------------------------------------
+Built from the client's final build brief with the Impeccable design skill. Stack kept static (the brief
+allows adapting to the repo). Content inventory check: 0 missing - nothing was removed.
+1. Global: utility bar; glass header (blur only once scrolled) with progress line; Ctrl/Cmd+K search
+   palette; Request a Call Back dialog; right-edge "Call back" tab; phone quick-action bar; storage notice;
+   footer with Book-a-demo + call-back band, medical disclaimer, advisory notice, privacy/terms links.
+2. Home rebuilt in 12 sections (hero with animated scan ring and stat chips, two-row ticker, quick actions,
+   product tabs, how MeiboX works, impact numbers, who we serve, about + mission/vision/solution,
+   achievements carousel, gallery masonry, supporters, careers/contact teasers). Every inner page moved to the
+   new system with a breadcrumb hero. Products tab order is now MeiboX | Metabo-X | VuOpt (same as the menu).
+3. New pages: 404.html; privacy.html and terms.html (placeholders). robots.txt, sitemap.xml, JSON-LD
+   (Organization/MedicalBusiness + WebSite on Home, three Products on Our Products; facts from the site only).
+4. Motion: varied scroll reveals with grid stagger, tab indicator, timeline draw, count-up, hero parallax,
+   cross-page view transitions; all off under prefers-reduced-motion. The CTA pulse was removed.
+5. Accessibility: axe-core WCAG 2.2 AA + best practice = 0 violations on every page, light and dark, desktop
+   and phone; 44px touch targets on touch screens; heading order fixed on About and Our Team.
+6. Performance: responsive image copies (tools/make_thumbs.ps1) through srcset; no blur on large panels;
+   masks replaced by gradient fades; Inter with font-display:optional and a metric-matched fallback.
+   Mobile-throttled Home: LCP ~8 s -> ~3.3 s, weight 756 -> 531 KB, long tasks ~3.9 s -> <0.1 s, CLS 0.
+7. Removed (unused since every page left the old stylesheet): css/legacy.css, the icomoon and Flaticon icon
+   fonts, the ten pattern-*.png decorations.
+8. Placeholders and open decisions are listed in README.txt.
+
+Navigation dropdowns redesign (2026-10-26)
+------------------------------------------
+1. The second-level hover preview card beside each menu item (badge, tagline, paragraph,
+   pills, image) is removed: markup, CSS and JS. Hovering an item only highlights it
+   (soft tint, orange name, arrow slides 4px).
+2. One compact 340px dropdown per tab, under its tab with a small notch: icon chip, item name,
+   one short descriptor line. Header link and footer note/CTA kept on every tab
+   (Products: "Diagnostic Platforms & Optical Systems", "View all products", "Patented optical
+   technology ...", "Book a Demo"). Gallery items show their photo in the chip.
+3. Behaviour: 80ms hover intent, 150ms close grace, one open at a time; fade + rise + scale-in
+   (180ms) / fade-out (120ms); off under prefers-reduced-motion. Keyboard: opens on focus,
+   Enter/Space, arrow keys/Home/End inside the menu, Esc closes; aria-haspopup="menu",
+   aria-expanded, role="menu"/"menuitem". Touch: tap toggles. Mobile: plain accordion, now
+   with the tab's "view all" link so every tab's page (e.g. Careers) is reachable.
+4. The menu HTML is generated from tools/nav-data.json by tools/build.py.
+5. Each item also shows a short detail sentence (max two lines) under its descriptor,
+   e.g. Meibo-X: "4-in-1 handheld imaging, >92% accuracy, results in under 2 minutes."
+
 Version 2.1 (Navigation, Tiles, Contact Form & Ticker)
 -----------------------------------------------------
 1. Hover dropdown menus on ALL 7 tabs (Home, About Us, Our Products, Achievements & Media,

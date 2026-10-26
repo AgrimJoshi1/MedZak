@@ -1,0 +1,107 @@
+<div class="modal" id="bookDemo" role="dialog" aria-modal="true" aria-labelledby="bookDemoTitle" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <button type="button" class="close" aria-label="Close"><svg class="icon"><use href="#i-x"/></svg></button>
+      <div class="modal-body">
+        <div class="modal-head">
+          <span class="icon-chip icon-chip--teal"><svg class="icon"><use href="#i-calendar"/></svg></span>
+          <div>
+            <h2 id="bookDemoTitle">Book Your Demo Now...!</h2>
+            <p class="muted">We will be happy to offer you a firsthand experience of the technology</p>
+          </div>
+        </div>
+        <form id="demoForm" name="frm" method="post" action="https://medzak.co/esend.php" class="form-grid" novalidate>
+          <div class="field"><label for="df-name">Name <span class="req" aria-hidden="true">*</span></label><input class="input" id="df-name" type="text" name="userName" placeholder="Name*" aria-label="Name" autocomplete="name" required></div>
+          <div class="field"><label for="df-email">Email <span class="req" aria-hidden="true">*</span></label><input class="input" id="df-email" type="email" name="userEmail" placeholder="Email*" aria-label="Email" autocomplete="email" required></div>
+          <div class="field"><label for="df-phone">Phone <span class="req" aria-hidden="true">*</span></label><input class="input" id="df-phone" type="tel" name="userPhone" placeholder="Phone*" aria-label="Phone" autocomplete="tel" inputmode="tel" maxlength="12" required></div>
+          <div class="field"><label for="df-company">Company name <span class="req" aria-hidden="true">*</span></label><input class="input" id="df-company" type="text" name="userCompany" placeholder="Company name" aria-label="Company name" autocomplete="organization" required></div>
+          <div class="field field--full"><label for="df-comments">Your comments <span class="req" aria-hidden="true">*</span></label><textarea class="textarea" id="df-comments" name="userComments" placeholder="Your Comments" aria-label="Your comments" required></textarea></div>
+          <div class="hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+          <div class="field--full modal-actions">
+            <button type="submit" class="submit btn btn--primary btn--lg">Request a Demo <svg class="icon btn-arrow"><use href="#i-arrow-right"/></svg></button>
+            <p class="form-note form-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+        <div class="form-success" hidden tabindex="-1">
+          <h3 class="success-head"><span class="icon-chip icon-chip--teal"><svg class="icon"><use href="#i-check-circle"/></svg></span>Thank you. Your demo request has been sent.</h3>
+          <p class="muted">Our team will get back to you by email. Need us sooner? Write to <a href="mailto:admin@medzak.co">admin@medzak.co</a>.</p>
+          <button type="button" class="btn btn--secondary" data-close-modal>Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="callback" role="dialog" aria-modal="true" aria-labelledby="callbackTitle" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <button type="button" class="close" aria-label="Close"><svg class="icon"><use href="#i-x"/></svg></button>
+      <div class="modal-body">
+        <div class="modal-head">
+          <span class="icon-chip icon-chip--teal"><svg class="icon"><use href="#i-phone"/></svg></span>
+          <div>
+            <h2 id="callbackTitle">Request a Call Back</h2>
+            <p class="muted">Leave your details and tell us what you are interested in. We will get in touch.</p>
+          </div>
+        </div>
+        <form id="callbackForm" method="post" action="https://medzak.co/esend.php" class="form-grid" novalidate>
+          <div class="field"><label for="cb-name">Name <span class="req" aria-hidden="true">*</span></label><input class="input" id="cb-name" type="text" name="userName" autocomplete="name" required></div>
+          <div class="field"><label for="cb-phone">Phone <span class="req" aria-hidden="true">*</span></label><input class="input" id="cb-phone" type="tel" name="userPhone" autocomplete="tel" inputmode="tel" maxlength="15" required></div>
+          <div class="field"><label for="cb-org">Organization</label><input class="input" id="cb-org" type="text" name="userCompany" autocomplete="organization"></div>
+          <div class="field"><label for="cb-email">Email <span class="muted">(optional)</span></label><input class="input" id="cb-email" type="email" name="userEmail" autocomplete="email"></div>
+          <div class="field field--full"><label for="cb-interest">I am interested in</label>
+            <select class="select" id="cb-interest" name="userInterest">
+              <option>General enquiry</option>
+              <option>Meibo-X</option>
+              <option>Metabo-X</option>
+              <option>VuOpt</option>
+            </select></div>
+          <div class="field field--full"><label for="cb-msg">Message <span class="muted">(optional)</span></label><textarea class="textarea" id="cb-msg" rows="3"></textarea></div>
+          <input type="hidden" name="userComments" id="cb-comments">
+          <div class="field field--full check-field">
+            <label class="check"><input type="checkbox" id="cb-consent" name="consent" required><span>I agree to be contacted about my request. We only use your details to reply to it.</span></label>
+          </div>
+          <div class="hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+          <div class="field--full modal-actions">
+            <button type="submit" class="submit btn btn--primary btn--lg">Request a Call Back <svg class="icon btn-arrow"><use href="#i-arrow-right"/></svg></button>
+            <p class="form-note form-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+        <div class="form-success" hidden tabindex="-1">
+          <h3 class="success-head"><span class="icon-chip icon-chip--teal"><svg class="icon"><use href="#i-check-circle"/></svg></span>Thank you. Your call back request has been sent.</h3>
+          <p class="muted">Our team will get back to you. You can also write to <a href="mailto:admin@medzak.co">admin@medzak.co</a>.</p>
+          <button type="button" class="btn btn--secondary" data-close-modal>Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal palette" id="palette" role="dialog" aria-modal="true" aria-label="Search the site" aria-hidden="true">
+  <div class="modal-dialog palette-dialog">
+    <div class="palette-content">
+      <div class="palette-field">
+        <svg class="icon"><use href="#i-search"/></svg>
+        <input type="search" id="palette-input" placeholder="Search pages and products" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list" aria-label="Search pages and products">
+        <button type="button" class="palette-esc" data-close-modal aria-label="Close search">Esc</button>
+      </div>
+      <ul class="palette-list" id="palette-list" role="listbox" aria-label="Results"></ul>
+      <p class="palette-foot"><span><kbd>&uarr;</kbd><kbd>&darr;</kbd> to move</span><span><kbd>Enter</kbd> to open</span><span><kbd>Ctrl</kbd><kbd>K</kbd> to search anywhere</span></p>
+    </div>
+  </div>
+  <script type="application/json" id="search-index">{{search-index}}</script>
+</div>
+
+<div class="consent" id="consent" role="region" aria-label="Cookie notice" hidden>
+  <p>We store your light or dark theme preference on your device. The map on the Contact page is provided by Google Maps, which may set its own cookies.</p>
+  <button type="button" class="btn btn--primary btn--sm" data-consent>Got it</button>
+</div>
+
+<nav class="quickbar" aria-label="Quick actions">
+  <a href="#callback" data-modal="callback"><svg class="icon"><use href="#i-phone"/></svg><span>Call back</span></a>
+  <a href="mailto:admin@medzak.co"><svg class="icon"><use href="#i-mail"/></svg><span>Email</span></a>
+  <a href="#bookDemo" data-modal="bookDemo" class="is-primary"><svg class="icon"><use href="#i-calendar"/></svg><span>Book demo</span></a>
+  <button type="button" data-open-menu><svg class="icon"><use href="#i-menu"/></svg><span>Menu</span></button>
+</nav>
+<aside class="float-wrap" aria-label="Quick contact"><a class="float-callback" href="#callback" data-modal="callback"><svg class="icon"><use href="#i-phone"/></svg><span>Call back</span></a></aside>
+<button class="scroll-to-top" type="button" aria-label="Back to top"><svg class="icon"><use href="#i-chevron-up"/></svg></button>
