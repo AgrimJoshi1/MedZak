@@ -1,0 +1,39 @@
+# Example Apache settings for the exported site (the contents of `out/`). NOT active: review with whoever runs
+# the server, then rename to .htaccess in the web root. Every block is wrapped in <IfModule> so a missing
+# module is skipped instead of causing a 500 error.
+
+# Custom error page
+ErrorDocument 404 /404.html
+
+# Compress text assets (HTML, CSS, JS, SVG, JSON, XML)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript image/svg+xml application/json application/xml text/xml text/plain
+</IfModule>
+
+# Cache. Files under /_next/static/ have a content hash in their name, so they can be kept for a year;
+# pages are always re-checked; images and fonts keep for a month.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Pages are exported as folders (/about-us/ is about-us/index.html). The previous static site used
+# /about-us.html style addresses: send those to the new ones so existing links and search results keep working.
+<IfModule mod_alias.c>
+  RedirectMatch 301 ^/index\.html$ /
+  RedirectMatch 301 ^/(about-us|our-products|achievements|gallery-media|careers|contact|our-team)\.html$ /$1/
+  RedirectMatch 301 ^/why-us\.html$ /about-us/
+  RedirectMatch 301 ^/our-offerings\.html$ /our-products/
+</IfModule>

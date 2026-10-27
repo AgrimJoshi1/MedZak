@@ -1,0 +1,124 @@
+/* Design tokens: "clinical report" system for Medzak Healthcare.
+   Palette idea: cool paper white + deep ink-teal (the colour of surgical drapes and instrument housings), one clinical
+   teal for everything that is measured or navigable, and the brand orange for the single action (BOOK A DEMO).
+   Every text/background pairing used by the components is checked with axe-core in both themes. */
+:root {
+  color-scheme: light;
+
+  /* surfaces */
+  --paper: #f6faf9;
+  --white: #ffffff;
+  --wash: #e8f1f1;
+  --sunk: #eef4f4;
+
+  /* ink */
+  --ink: #0b2530;
+  --ink-2: #2e4953;
+  --ink-3: #536c76;
+  --rule: rgba(11, 37, 48, 0.13);
+  --rule-strong: rgba(11, 37, 48, 0.32);
+
+  /* clinical teal: links, markers, measured values */
+  --teal: #087578;
+  --teal-hover: #075e61;
+  --teal-bright: #14a7a4;
+  --teal-wash: #dbf0ee;
+
+  /* deep band (facts, call to action, utility bar) */
+  --deep: #062c37;
+  --deep-2: #0b3d4b;
+  --on-deep: #dcedee;
+  --on-deep-2: #a3c7cc;
+  --teal-on-deep: #5fd6cf;
+
+  /* the single action */
+  --orange: #f47b30;
+  --orange-hover: #ec6a1e;
+  --on-orange: #0b2530;
+  --orange-ink: #b3480c;
+
+  /* logo wordmark */
+  --brand-med: #4a68bd;
+
+  --danger: #d93025;
+  --danger-ink: #c5221f;
+  --focus: #f47b30;
+
+  /* the four MeiboX imaging types (representational colours, used in one strip) */
+  --m-ir: #d9486a;
+  --m-visible: #e9a53b;
+  --m-ultrasonic: #5a80a8;
+  --m-fluorescence: #3fbf86;
+
+  /* images are softened slightly in dark mode */
+  --img-tone: none;
+  --logo-filter: none;
+
+  /* type */
+  --font: var(--font-atkinson), ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --fs-display: clamp(2.25rem, 1.15rem + 3.5vw, 3.75rem);
+  --fs-h1: clamp(2.25rem, 1.4rem + 3vw, 3.75rem);
+  --fs-h2: clamp(1.7rem, 1.25rem + 1.6vw, 2.5rem);
+  --fs-h3: clamp(1.2rem, 1.1rem + 0.4vw, 1.4rem);
+  --fs-lead: clamp(1.1rem, 1.02rem + 0.35vw, 1.3rem);
+  --fs-body: 1.0625rem;
+  --fs-sm: 0.9375rem;
+  --fs-xs: 0.8125rem;
+  --measure: 58ch;
+  --measure-lead: 52ch; /* lead-size text runs wider per character, so it gets fewer of them */
+
+  /* space and shape */
+  --container: 1240px;
+  --gutter: clamp(18px, 4vw, 40px);
+  --section-y: clamp(64px, 8vw, 112px);
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --shadow-pop: 0 14px 36px rgba(6, 44, 55, 0.16), 0 2px 6px rgba(6, 44, 55, 0.08);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur: 220ms;
+
+  --util-h: 38px;
+  --bar-h: 72px;
+  --header-h: calc(var(--util-h) + var(--bar-h));
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --paper: #061a21;
+  --white: #0a2630;
+  --wash: #0d303b;
+  --sunk: #08212a;
+
+  --ink: #e8f4f5;
+  --ink-2: #c3d9dc;
+  --ink-3: #8cc2c7;
+  --rule: rgba(232, 244, 245, 0.14);
+  --rule-strong: rgba(232, 244, 245, 0.34);
+
+  --teal: #4fd0c8;
+  --teal-hover: #8be4de;
+  --teal-bright: #2fb8b2;
+  --teal-wash: rgba(79, 208, 200, 0.13);
+
+  --deep: #04141a;
+  --deep-2: #0a2a34;
+  --on-deep: #d6e9eb;
+  --on-deep-2: #9ac0c6;
+  --teal-on-deep: #5fd6cf;
+
+  --orange: #f58a47;
+  --orange-hover: #ff9a5c;
+  --on-orange: #061a21;
+  --orange-ink: #ff9d62;
+
+  --brand-med: #93a9ee;
+  --danger: #ff6b6b;
+  --danger-ink: #ff8a80;
+  --focus: #f58a47;
+
+  --img-tone: brightness(0.93) contrast(1.03);
+  --logo-filter: brightness(1.12);
+  --shadow-pop: 0 14px 36px rgba(0, 0, 0, 0.5), 0 2px 6px rgba(0, 0, 0, 0.3);
+}
