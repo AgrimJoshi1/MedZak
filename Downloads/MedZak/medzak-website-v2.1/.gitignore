@@ -1,6 +1,0 @@
-# Impeccable: local caches and per-machine settings (config.json and surfaces/ are shared project context)
-.impeccable/hook.cache.json
-.impeccable/config.local.json
-.impeccable/mocks/
-.impeccable/review/
-.impeccable/build/
