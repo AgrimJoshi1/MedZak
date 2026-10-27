@@ -1,0 +1,29 @@
+{
+  "name": "medzak-website",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Medzak Healthcare website (Next.js, TypeScript, static export)",
+  "scripts": {
+    "images": "node scripts/gen-images.mjs",
+    "predev": "npm run images",
+    "dev": "node scripts/dev.mjs",
+    "dev:plain": "next dev -p 3000",
+    "prebuild": "npm run images",
+    "build": "next build",
+    "start": "npx serve out -l 3000",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "14.2.35",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@fontsource/atkinson-hyperlegible-next": "5.3.0",
+    "@types/node": "20.19.43",
+    "@types/react": "18.3.31",
+    "@types/react-dom": "18.3.7",
+    "image-size": "2.0.4",
+    "typescript": "5.9.3"
+  }
+}
