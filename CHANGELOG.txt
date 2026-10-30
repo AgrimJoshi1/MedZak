@@ -1,0 +1,71 @@
+Version 2.1 (Navigation, Tiles, Contact Form & Ticker)
+-----------------------------------------------------
+1. Hover dropdown menus on ALL 7 tabs (Home, About Us, Our Products, Achievements & Media,
+   Gallery, Careers, Contact Us), modelled on the Our Products mega-menu. Hover-intent on
+   desktop, keyboard support (Tab / ArrowDown / Escape), tap-to-open on touch, accordion on mobile.
+   Header now switches to the hamburger layout below 1200px so the tabs and CTA always fit.
+   Small menu thumbnails live in assets/images/nav/.
+2. Uniform tiles: Achievements, Media and Gallery now use equal-sized tiles (4:3 image frame,
+   fixed caption area). Posters/certificates are shown whole over a blurred backdrop; gallery
+   photos are cover-cropped. A lone last tile is centred. Full image/caption opens in the lightbox.
+3. Contact page: new "Send Us a Message" form (name, email, phone, organisation, subject, message)
+   with inline validation and a honeypot. Posts to https://medzak.co/esend.php using the same
+   field names as the Book-a-Demo form; subject is prefixed to userComments.
+4. Home page: LinkedIn motion bar now sits directly under the hero, in the reference style
+   (dark band, "Innovating for disease prevention" banner, LinkedIn icons, pause on hover).
+5. Anchors added: about-us.html#mission/#vision/#solution, index.html#news/#supporters,
+   achievements.html#supporters, contact.html#contact-form/#map.
+
+Medzak website - change log (spec v1.0)
+Status: done / deviated / blocked
+
+G1 nav (7 tabs, all pages)                  done
+G2 fonts Inter + Red Hat Display            DEVIATED - Red Hat Display ships as redhatdisplay-var.woff
+                                            (latin subset, variable 300-900). The build environment had no WOFF2
+                                            (Brotli) encoder, so the supplied TTF was converted to WOFF instead.
+                                            Same typeface, still self-hosted. Inter is the supplied inter-var.woff2
+                                            (full file, not subset). @font-face points at the .woff file.
+G3 footer links + "(c) 2018 All Rights Reserved"   done
+G4 renames/new pages/stubs/deletions        done
+G5 new CSS tokens (light + both dark blocks) done
+H1-H7 Home                                  done
+A1-A5 About Us                              done
+P1-P6 Our Products                          done
+GM1 Gallery & Media                         done (7 images, existing lightbox)
+CR1 Careers                                 done
+CT1 Contact                                 done
+AC1 Achievements / Our Team                 done (nav + footer only)
+J1 tabs, J2 ticker                          done
+X1 README, X2 asset cleanup, X3 metadata    done
+
+Decisions D1-D14 applied as specified.
+D6: ticker items are placeholders until real LinkedIn posts are supplied.
+D13: see G2 above.
+
+Notes
+- Hero images: hero-eye.jpg 1600x900 (131 KB), metabo-x.jpg 1536x1024 (95 KB), JPEG q82 progressive.
+- Unused CSS removed (old banner, statistics, product blocks, intro block).
+- our-team.html: Ramjit Vishwakarma still shows the grey placeholder photo.
+- js/main.js still accepts a "#sagarJuneja" modal hash that has no matching modal (left as-is per R5).
+- Tested in Chromium at 390, 768, 992, 1100, 1280, 1440 px: no horizontal scroll; nav stays on one line from 992 px.
+
+Round 2 - audit against WEBSITE_CONTENT.docx
+- All copy in the document was checked line by line against the site: matches (spec-approved normalisations only).
+- Metabo-X panel + Gallery now use the Metabo-X product image supplied in the document
+  (assets/images/metabo-x-product.jpg; the "DeeVid AI" watermark strip was cropped off).
+- Our Vision / Our Solution icons changed to eye / lightbulb (Home + About), matching the document's reference.
+- "Watch More" button now shows a play icon (label unchanged).
+- Gallery & Media: added the Metabo-X product image (8 items).
+Still placeholders / intentionally not done (no content supplied in the document):
+- LinkedIn ticker posts (no post text, dates or URLs were given).
+- Product names kept as MeiboX / Vucan-X / Metabo-X (document mixes "Meibo-X" and "VuOpt" in the tab list).
+- Nav label kept as "Contact Us" (document writes "Contact us").
+
+Round 3
+- Nav + footer: "Achievements" is now "Achievements & Media"; "Gallery & Media" is now "Gallery" (order: ... Our Products, Achievements & Media, Gallery, Careers ...).
+- achievements.html: 12 achievements (captions from Achievement_description.docx), a divider, then the Media section (13 images).
+- gallery-media.html: 24 photos in numeric order (1..7, 7a, 8..18, 18a, 19..22). Filename kept.
+- Product renamed Vucan-X -> VuOpt everywhere (text, tab id, deep link #vuopt).
+- Images were resized (max 1600-1800 px) and large PNGs saved as JPG.
+- FAOBMB 2019 image cropped to the banner; IITM 2020 PDF converted to JPG.
+Open items: SHE_Innovates_4_0.png is not used (not in the description document).
