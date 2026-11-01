@@ -165,6 +165,7 @@
         'cf-name': function (v) { return v.trim().length >= 2 ? '' : 'Please enter your name.'; },
         'cf-email': function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) ? '' : 'Please enter a valid email address.'; },
         'cf-phone': function (v) { return v.replace(/[^0-9]/g, '').length >= 7 ? '' : 'Please enter a valid phone number.'; },
+        'cf-org': function (v) { return v.trim().length >= 2 ? '' : 'Please enter your organisation or hospital.'; },
         'cf-msg': function (v) { return v.trim().length >= 10 ? '' : 'Please write a short message (at least 10 characters).'; }
       };
       var runCheck = function (id) { var el = document.getElementById(id); return el ? setErr(el, checks[id](el.value)) : true; };
