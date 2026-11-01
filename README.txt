@@ -40,7 +40,23 @@ News ticker (Home)
 The six ticker items are PLACEHOLDERS (the achievement captions, linking to achievements.html).
 Replace them with real LinkedIn posts: see the TODO comment above the <ul class="ticker-track"> in index.html.
 
-Book-a-demo form
-----------------
-Posts to https://medzak.co/esend.php. If you host elsewhere, change the form action in the
-"bookDemo" modal (it appears once per page).
+Forms (Book a Demo + Contact)
+-----------------------------
+Both post to https://medzak.co/esend.php (Book a Demo modal on every page, contact form on
+contact.html). As of 2026-11-01 a plain GET of esend.php answers 301 -> https://medzak.co/esend;
+if POSTs are redirected too, browsers resend them as GET and the form data is lost. Before launch,
+send one real test enquiry from each form and confirm it arrives. If it doesn't, change the form
+action to https://medzak.co/esend (2 places per page: modal + contact form).
+
+Hosting
+-------
+Plain static files, no build step: upload the folder as-is (any static host, Apache, Vercel, Netlify).
+- 404.html: custom "page not found" page (root-relative links, so it works at any URL depth).
+  Vercel/Netlify use it automatically; on Apache add  ErrorDocument 404 /404.html  to .htaccess.
+- robots.txt + sitemap.xml list the public pages on https://medzak.co (our-team.html is noindex).
+- Canonical / og:url tags point at https://medzak.co/<page>.html; if the site goes live on another
+  domain, change them (and sitemap.xml, robots.txt).
+- Grid images (Achievements, Media, Gallery) use 800px copies in assets/images/thumbs/;
+  clicking opens the full-size original. Re-create a thumb when you replace a photo.
+- Supporter logos and product images load immediately (not lazily) on purpose: lazy images in the
+  sideways-scrolling logo strip and in hidden product tabs showed up blank on phones.

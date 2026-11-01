@@ -84,6 +84,52 @@
       window.addEventListener('resize', function () { ddItems.forEach(function (l) { closeDd(l); l.classList.remove('dd-closed'); }); });
     }
 
+    /* Home: About Us is a section of this page, so move the nav underline (li.current) to
+       "About Us" while that section is on screen, and straight away when an About link is clicked */
+    var aboutSec = document.getElementById('about');
+    var homeLi = document.querySelector('.navigation > li > a[href="index.html"]');
+    var aboutLi = document.querySelector('.navigation > li > a[href="index.html#about"]');
+    if (aboutSec && homeLi && aboutLi) {
+      homeLi = homeLi.parentNode; aboutLi = aboutLi.parentNode;
+      var aboutLink = aboutLi.querySelector('a');
+      var spyLock = null;
+      var markAbout = function (on) {
+        homeLi.classList.toggle('current', !on);
+        aboutLi.classList.toggle('current', on);
+        if (on) aboutLink.setAttribute('aria-current', 'location'); else aboutLink.removeAttribute('aria-current');
+      };
+      var spy = function () {
+        if (spyLock) return;
+        var r = aboutSec.getBoundingClientRect(), line = window.innerHeight * 0.4;
+        markAbout(r.top <= line && r.bottom > line);
+      };
+      var ticking = false;
+      window.addEventListener('scroll', function () {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function () { ticking = false; spy(); });
+      }, { passive: true });
+      window.addEventListener('resize', spy);
+      /* a click on any About link (#about, #mission, #vision, #solution) switches at once; the
+         spy waits until the smooth scroll has finished so the underline doesn't flick back */
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest('a[href^="index.html#"]');
+        if (!a || !/#(about|mission|vision|solution)$/.test(a.getAttribute('href'))) return;
+        if (e.defaultPrevented) return; /* mobile: tapping "About Us" only opens its accordion */
+        markAbout(true);
+        clearTimeout(spyLock);
+        spyLock = setTimeout(function () { spyLock = null; spy(); }, 1200);
+      });
+      /* arriving from another page on index.html#about / #mission / #vision / #solution */
+      if (/^#(about|mission|vision|solution)$/.test(location.hash)) {
+        markAbout(true);
+        spyLock = setTimeout(function () { spyLock = null; spy(); }, 1200);
+      } else {
+        spy();
+      }
+      window.addEventListener('load', spy);
+    }
+
     /* Modals (Book a demo, team bios) */
     var lastFocus = null;
     var FOCUSABLE = 'a[href],button:not([disabled]),input:not([disabled]),textarea:not([disabled]),select:not([disabled]),[tabindex]:not([tabindex="-1"])';
