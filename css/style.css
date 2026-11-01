@@ -328,8 +328,6 @@ ul.teamList{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;margin-t
 .tab-copy h2{font-size:32px;color:var(--text-strong);margin-bottom:8px}
 .tab-copy .lead{font-size:18px;line-height:1.5;color:var(--text-muted);margin-bottom:18px}
 .tab-copy p{font-size:16px;line-height:1.8;color:var(--text-strong)}
-/* VuOpt has no subtitle; its opening sentence takes the grey of the other products' subtitles */
-.tab-copy .intro{color:var(--text-muted)}
 .tab-copy .theme-btn{margin-top:8px}
 @media (prefers-reduced-motion:no-preference){.product-tabs .tabpanel:not([hidden]){animation:tabfade .2s ease}@keyframes tabfade{from{opacity:0}to{opacity:1}}}
 @media (min-width:768px) and (max-width:1099px){.product-tabs .tablist{grid-template-columns:repeat(2,1fr)}}
