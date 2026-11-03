@@ -53,9 +53,14 @@ Hosting
 Plain static files, no build step: upload the folder as-is (any static host, Apache, Vercel, Netlify).
 - 404.html: custom "page not found" page (root-relative links, so it works at any URL depth).
   Vercel/Netlify use it automatically; on Apache add  ErrorDocument 404 /404.html  to .htaccess.
-- robots.txt + sitemap.xml list the public pages on https://medzak.co (our-team.html is noindex).
-- Canonical / og:url tags point at https://medzak.co/<page>.html; if the site goes live on another
-  domain, change them (and sitemap.xml, robots.txt).
+- Live at https://www.medzak.co (Vercel; medzak.co redirects to www). robots.txt + sitemap.xml list
+  the public pages there (our-team.html is noindex). Canonical / og:url / og:image use
+  https://www.medzak.co/<page>.html — keep them on www, the address the site is actually served from.
+- Older iPhones (iOS 12-14): style.css avoids or backs up features they lack — no `inset:` /
+  `border-block` (longhands instead), plain font-size before every clamp(), :focus-visible and
+  :has() never share a selector list with normal selectors (old Safari drops the whole rule),
+  and an @supports block gives .thumb / .mvp-media / menu photos a padding-based height where
+  aspect-ratio isn't supported. Keep to these when editing.
 - Grid images (Achievements, Media, Gallery) use 800px copies in assets/images/thumbs/;
   clicking opens the full-size original. Re-create a thumb when you replace a photo.
 - Supporter logos and product images load immediately (not lazily) on purpose: lazy images in the

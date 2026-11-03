@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://medzak.co/sitemap.xml
+Sitemap: https://www.medzak.co/sitemap.xml
