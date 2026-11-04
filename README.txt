@@ -56,6 +56,10 @@ Plain static files, no build step: upload the folder as-is (any static host, Apa
 - Live at https://www.medzak.co (Vercel; medzak.co redirects to www). robots.txt + sitemap.xml list
   the public pages there (our-team.html is noindex). Canonical / og:url / og:image use
   https://www.medzak.co/<page>.html — keep them on www, the address the site is actually served from.
+- CSS/JS are linked as css/style.css?v=20261105 and js/main.js?v=20261105. The OLD medzak.co site
+  also had a css/style.css, sent with a 30-day cache, so visitors who saw the old site kept using
+  it on the new pages (unstyled page, giant logo). The ?v= makes it a new address. Vercel itself
+  sends max-age=0, so bumping ?v= on later edits is optional (do it if anyone sees stale styles).
 - Older iPhones (iOS 12-14): style.css avoids or backs up features they lack — no `inset:` /
   `border-block` (longhands instead), plain font-size before every clamp(), :focus-visible and
   :has() never share a selector list with normal selectors (old Safari drops the whole rule),
